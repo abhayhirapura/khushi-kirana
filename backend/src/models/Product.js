@@ -45,6 +45,13 @@ const productSchema = new mongoose.Schema({
   timestamps: true
 });
 
+// Indexes for production database optimization
+productSchema.index({ category: 1 });
+productSchema.index({ isTrending: 1 });
+productSchema.index({ isPopular: 1 });
+productSchema.index({ name: 'text', description: 'text' });
+
+
 const Product = mongoose.model('Product', productSchema);
 export default Product;
 export { productSchema };
