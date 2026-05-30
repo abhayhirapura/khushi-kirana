@@ -238,7 +238,7 @@ const AdminDashboard = () => {
   if (!user || user.role !== 'admin') {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="bg-red-50 dark:bg-red-950/20 text-red-655 p-6 rounded-3xl text-center max-w-sm">
+        <div className="bg-red-50 dark:bg-red-950/20 text-red-600 p-6 rounded-3xl text-center max-w-sm">
           <AlertTriangle className="w-12 h-12 mx-auto mb-2" />
           <h3 className="font-extrabold text-lg">Access Denied</h3>
           <p className="text-xs mt-1">This panel is restricted to authorized store administrators only.</p>
@@ -253,7 +253,7 @@ const AdminDashboard = () => {
       {/* Title block */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-black text-gray-905 dark:text-white">Admin Control Panel</h1>
+          <h1 className="text-3xl font-black text-gray-900 dark:text-white">Admin Control Panel</h1>
           <p className="text-xs font-semibold text-gray-400">Manage Annu Rajawat Heerapura’s Khusi Kirana store</p>
         </div>
         
@@ -282,13 +282,13 @@ const AdminDashboard = () => {
           {statsLoading ? (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-pulse">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-28 bg-gray-150 dark:bg-slate-900 rounded-3xl"></div>
+                <div key={i} className="h-28 bg-gray-200 dark:bg-slate-900 rounded-3xl"></div>
               ))}
             </div>
           ) : stats ? (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               
-              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-150 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
+              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
                 <div className="p-3.5 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-500 rounded-2xl">
                   <IndianRupee className="w-6 h-6" />
                 </div>
@@ -298,7 +298,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-150 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
+              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
                 <div className="p-3.5 bg-blue-50 dark:bg-blue-950/20 text-blue-500 rounded-2xl">
                   <ShoppingBag className="w-6 h-6" />
                 </div>
@@ -308,7 +308,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-150 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
+              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
                 <div className="p-3.5 bg-purple-50 dark:bg-purple-950/20 text-purple-500 rounded-2xl">
                   <Users className="w-6 h-6" />
                 </div>
@@ -318,7 +318,7 @@ const AdminDashboard = () => {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-150 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
+              <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-gray-200 dark:border-slate-800 flex items-center space-x-4 shadow-sm relative overflow-hidden">
                 <div className="p-3.5 bg-red-50 dark:bg-red-950/20 text-red-500 rounded-2xl">
                   <AlertTriangle className="w-6 h-6" />
                 </div>
@@ -334,7 +334,7 @@ const AdminDashboard = () => {
           {/* Revenue and Category distributions graphics */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Sales Trends visualizer */}
-            <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-150 dark:border-slate-800 shadow-sm">
+            <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-sm">
               <h3 className="text-sm font-black text-gray-900 dark:text-white mb-6 uppercase tracking-wider flex items-center">
                 <TrendingUp className="w-4 h-4 mr-2 text-primary-500" /> Sales & Revenue Growth (Last 6 Months)
               </h3>
@@ -342,7 +342,7 @@ const AdminDashboard = () => {
                 <div className="space-y-4">
                   {stats.monthlySales.map((item, i) => (
                     <div key={i} className="space-y-1">
-                      <div className="flex justify-between text-xs font-bold text-gray-700 dark:text-gray-350">
+                      <div className="flex justify-between text-xs font-bold text-gray-700 dark:text-gray-300">
                         <span>{item.month}</span>
                         <span>₹{item.sales}</span>
                       </div>
@@ -361,7 +361,7 @@ const AdminDashboard = () => {
             </div>
 
             {/* Category breakdown visualizer */}
-            <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-150 dark:border-slate-800 shadow-sm">
+            <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-sm">
               <h3 className="text-sm font-black text-gray-900 dark:text-white mb-6 uppercase tracking-wider flex items-center">
                 <BarChart2 className="w-4 h-4 mr-2 text-accent-500" /> Sales distribution by Category
               </h3>
@@ -369,7 +369,7 @@ const AdminDashboard = () => {
                 <div className="space-y-4">
                   {stats.categorySales.map((item, i) => (
                     <div key={i} className="space-y-1">
-                      <div className="flex justify-between text-xs font-bold text-gray-700 dark:text-gray-350">
+                      <div className="flex justify-between text-xs font-bold text-gray-700 dark:text-gray-300">
                         <span>{item.name}</span>
                         <span>₹{item.value}</span>
                       </div>
@@ -389,7 +389,7 @@ const AdminDashboard = () => {
           </div>
           
           {/* Low Stock Alerts inventory warning table */}
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-150 dark:border-slate-800 shadow-sm">
+          <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-sm">
             <h3 className="text-sm font-black text-gray-900 dark:text-white mb-4 uppercase tracking-wider flex items-center">
               <AlertTriangle className="w-4.5 h-4.5 mr-2 text-red-500" /> Low Stock Warnings (&lt; 10 units left)
             </h3>
@@ -397,20 +397,20 @@ const AdminDashboard = () => {
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
                   <thead>
-                    <tr className="border-b border-gray-100 dark:border-slate-850 text-gray-400 font-bold uppercase">
+                    <tr className="border-b border-gray-100 dark:border-slate-800 text-gray-400 font-bold uppercase">
                       <th className="py-2.5">Product Name</th>
                       <th className="py-2.5">Category</th>
                       <th className="py-2.5">Price</th>
                       <th className="py-2.5">Remaining Stock</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100 dark:divide-slate-850 text-gray-800 dark:text-gray-200">
+                  <tbody className="divide-y divide-gray-100 dark:divide-slate-800 text-gray-800 dark:text-gray-200">
                     {stats.lowStockProducts.map(p => (
                       <tr key={p._id}>
                         <td className="py-3 font-bold">{p.name}</td>
                         <td className="py-3 text-gray-400">{p.category}</td>
                         <td className="py-3">₹{p.price}</td>
-                        <td className="py-3 font-black text-red-550">{p.stock} left</td>
+                        <td className="py-3 font-black text-red-500">{p.stock} left</td>
                       </tr>
                     ))}
                   </tbody>
@@ -428,20 +428,20 @@ const AdminDashboard = () => {
 
       {/* Tab: Orders Management with Delivery Assignments */}
       {activeTab === 'orders' && (
-        <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
           <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6">Customer Orders</h2>
 
           {ordersLoading ? (
             <div className="space-y-4 animate-pulse">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-16 bg-gray-100 dark:bg-slate-850 rounded-2xl"></div>
+                <div key={i} className="h-16 bg-gray-100 dark:bg-slate-800 rounded-2xl"></div>
               ))}
             </div>
           ) : orders.length > 0 ? (
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs min-w-[700px]">
                 <thead>
-                  <tr className="border-b border-gray-150 dark:border-slate-800 text-gray-400 font-bold uppercase">
+                  <tr className="border-b border-gray-200 dark:border-slate-800 text-gray-400 font-bold uppercase">
                     <th className="py-3.5">Customer</th>
                     <th className="py-3.5">Total Value</th>
                     <th className="py-3.5">Tracking ID</th>
@@ -451,7 +451,7 @@ const AdminDashboard = () => {
                     <th className="py-3.5 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100 dark:divide-slate-850 text-gray-805 dark:text-gray-205">
+                <tbody className="divide-y divide-gray-100 dark:divide-slate-800 text-gray-805 dark:text-gray-205">
                   {orders.map(order => (
                     <tr key={order._id}>
                       <td className="py-4">
@@ -464,17 +464,17 @@ const AdminDashboard = () => {
                         <span className={`inline-block px-2 py-0.5 rounded-md font-bold text-[9px] ${
                           order.isPaid
                             ? 'bg-green-50 text-green-600 dark:bg-green-950/20 dark:text-green-400'
-                            : 'bg-red-50 text-red-550 dark:bg-red-950/20 dark:text-red-400'
+                            : 'bg-red-50 text-red-500 dark:bg-red-950/20 dark:text-red-400'
                         }`}>
                           {order.isPaid ? 'PAID' : 'PENDING'}
                         </span>
-                        <div className="text-[10px] text-gray-450 mt-0.5">{order.paymentMethod}</div>
+                        <div className="text-[10px] text-gray-400 mt-0.5">{order.paymentMethod}</div>
                       </td>
                       <td className="py-4">
                         <select
                           value={order.status}
                           onChange={(e) => handleUpdateOrderStatus(order._id, e.target.value)}
-                          className="p-1 rounded bg-transparent border border-gray-250 dark:border-slate-800 font-bold text-gray-700 dark:text-gray-300"
+                          className="p-1 rounded bg-transparent border border-gray-200 dark:border-slate-800 font-bold text-gray-700 dark:text-gray-300"
                         >
                           <option value="Placed">Placed</option>
                           <option value="Processing">Processing</option>
@@ -490,7 +490,7 @@ const AdminDashboard = () => {
                         <select
                           value={order.deliveryPartner?._id || order.deliveryPartner || ''}
                           onChange={(e) => handleAssignRider(order._id, e.target.value)}
-                          className="p-1 rounded bg-transparent border border-gray-250 dark:border-slate-800 font-medium text-gray-700 dark:text-gray-300 w-36"
+                          className="p-1 rounded bg-transparent border border-gray-200 dark:border-slate-800 font-medium text-gray-700 dark:text-gray-300 w-36"
                         >
                           <option value="">-- Assign Rider --</option>
                           {deliveryPartners.map(rider => (
@@ -502,7 +502,7 @@ const AdminDashboard = () => {
                       <td className="py-4 text-right">
                         <Link 
                           to={`/orders/${order._id}/tracking`}
-                          className="px-3 py-1.5 bg-gray-50 hover:bg-gray-100 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg font-bold border border-gray-200 dark:border-slate-850"
+                          className="px-3 py-1.5 bg-gray-50 hover:bg-gray-100 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg font-bold border border-gray-200 dark:border-slate-800"
                         >
                           Track Package
                         </Link>
@@ -521,7 +521,7 @@ const AdminDashboard = () => {
       {/* Tab: Inventory CRUD Management */}
       {activeTab === 'inventory' && (
         <div className="space-y-6">
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-extrabold text-gray-900 dark:text-white">Store Inventory</h2>
               <button
@@ -545,7 +545,7 @@ const AdminDashboard = () => {
 
             {/* Product Create/Edit form card */}
             {showProductForm && (
-              <form onSubmit={handleProductSubmit} className="mb-8 p-6 bg-gray-50 dark:bg-slate-950 border border-gray-150 dark:border-slate-850 rounded-2xl space-y-4">
+              <form onSubmit={handleProductSubmit} className="mb-8 p-6 bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-2xl space-y-4">
                 <h3 className="text-sm font-black uppercase text-gray-900 dark:text-white">
                   {editProductId ? 'Edit Catalog Product' : 'Add New Catalog Product'}
                 </h3>
@@ -559,7 +559,7 @@ const AdminDashboard = () => {
                       value={pName}
                       onChange={(e) => setPName(e.target.value)}
                       placeholder="Tata Salt, Fortune Oil..."
-                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
+                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
@@ -567,7 +567,7 @@ const AdminDashboard = () => {
                     <select
                       value={pCategory}
                       onChange={(e) => setPCategory(e.target.value)}
-                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
+                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
                     >
                       {categoriesList.map(cat => (
                         <option key={cat} value={cat}>{cat}</option>
@@ -583,7 +583,7 @@ const AdminDashboard = () => {
                       value={pPrice}
                       onChange={(e) => setPPrice(e.target.value)}
                       placeholder="99"
-                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
+                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
@@ -595,7 +595,7 @@ const AdminDashboard = () => {
                       value={pDiscount}
                       onChange={(e) => setPDiscount(e.target.value)}
                       placeholder="5"
-                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
+                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
@@ -607,7 +607,7 @@ const AdminDashboard = () => {
                       value={pStock}
                       onChange={(e) => setPStock(e.target.value)}
                       placeholder="100"
-                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
+                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
                     />
                   </div>
                   <div className="sm:col-span-3">
@@ -618,7 +618,7 @@ const AdminDashboard = () => {
                       value={pImage}
                       onChange={(e) => setPImage(e.target.value)}
                       placeholder="https://images.unsplash.com/..."
-                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
+                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
                     />
                   </div>
                   <div className="sm:col-span-3">
@@ -628,7 +628,7 @@ const AdminDashboard = () => {
                       onChange={(e) => setPDescription(e.target.value)}
                       placeholder="Provide nutritional benefits and details..."
                       rows="3"
-                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
+                      className="w-full mt-1 p-2.5 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl text-xs text-gray-900 dark:text-white"
                     ></textarea>
                   </div>
                   
@@ -662,7 +662,7 @@ const AdminDashboard = () => {
                       setShowProductForm(false);
                       setEditProductId(null);
                     }}
-                    className="px-4 py-2 border border-gray-250 dark:border-slate-850 text-gray-500 rounded-xl text-xs font-semibold"
+                    className="px-4 py-2 border border-gray-200 dark:border-slate-800 text-gray-500 rounded-xl text-xs font-semibold"
                   >
                     Cancel
                   </button>
@@ -680,15 +680,15 @@ const AdminDashboard = () => {
             {productsLoading ? (
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-pulse">
                 {[...Array(8)].map((_, i) => (
-                  <div key={i} className="h-44 bg-gray-100 dark:bg-slate-850 rounded-2xl"></div>
+                  <div key={i} className="h-44 bg-gray-100 dark:bg-slate-800 rounded-2xl"></div>
                 ))}
               </div>
             ) : productsList.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {productsList.map(prod => (
-                  <div key={prod._id} className="p-3 border border-gray-150 dark:border-slate-850 rounded-2xl bg-gray-50/20 dark:bg-slate-900/10 flex flex-col justify-between relative">
+                  <div key={prod._id} className="p-3 border border-gray-200 dark:border-slate-800 rounded-2xl bg-gray-50/20 dark:bg-slate-900/10 flex flex-col justify-between relative">
                     <div>
-                      <div className="w-full pt-[75%] relative overflow-hidden bg-white rounded-xl border border-gray-100 dark:border-slate-850">
+                      <div className="w-full pt-[75%] relative overflow-hidden bg-white rounded-xl border border-gray-100 dark:border-slate-800">
                         <img src={prod.image} alt={prod.name} className="absolute inset-0 w-full h-full object-cover" />
                       </div>
                       
@@ -699,14 +699,14 @@ const AdminDashboard = () => {
                           <span className="font-black text-gray-900 dark:text-white text-sm">₹{prod.price}</span>
                           <span className="text-[10px] text-gray-400 line-through">₹{Math.round(prod.price * 1.15)}</span>
                         </div>
-                        <span className="text-[10px] font-bold text-gray-450 block mt-1">Stock Left: <span className={prod.stock < 10 ? 'text-red-500 font-extrabold' : 'text-primary-500'}>{prod.stock}</span></span>
+                        <span className="text-[10px] font-bold text-gray-400 block mt-1">Stock Left: <span className={prod.stock < 10 ? 'text-red-500 font-extrabold' : 'text-primary-500'}>{prod.stock}</span></span>
                       </div>
                     </div>
 
-                    <div className="mt-3 flex gap-1.5 pt-2.5 border-t border-gray-100 dark:border-slate-850">
+                    <div className="mt-3 flex gap-1.5 pt-2.5 border-t border-gray-100 dark:border-slate-800">
                       <button
                         onClick={() => handleEditProduct(prod)}
-                        className="flex-1 py-1.5 bg-gray-50 hover:bg-gray-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-655 dark:text-gray-300 font-bold border border-gray-200 dark:border-slate-800 rounded-lg text-[10px] flex items-center justify-center gap-1"
+                        className="flex-1 py-1.5 bg-gray-50 hover:bg-gray-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-gray-600 dark:text-gray-300 font-bold border border-gray-200 dark:border-slate-800 rounded-lg text-[10px] flex items-center justify-center gap-1"
                       >
                         <Edit className="w-3 h-3" /> Edit
                       </button>
@@ -730,36 +730,36 @@ const AdminDashboard = () => {
 
       {/* Tab: Users & Roles promotions */}
       {activeTab === 'users' && (
-        <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
           <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6">User Accounts</h2>
 
           {usersLoading ? (
             <div className="space-y-4 animate-pulse">
               {[...Array(3)].map((_, i) => (
-                <div key={i} className="h-14 bg-gray-100 dark:bg-slate-850 rounded-2xl"></div>
+                <div key={i} className="h-14 bg-gray-100 dark:bg-slate-800 rounded-2xl"></div>
               ))}
             </div>
           ) : usersList.length > 0 ? (
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs min-w-[500px]">
                 <thead>
-                  <tr className="border-b border-gray-150 dark:border-slate-800 text-gray-400 font-bold uppercase">
+                  <tr className="border-b border-gray-200 dark:border-slate-800 text-gray-400 font-bold uppercase">
                     <th className="py-3">Name</th>
                     <th className="py-3">Email Address</th>
                     <th className="py-3">Current Role</th>
                     <th className="py-3 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100 dark:divide-slate-850 text-gray-805 dark:text-gray-205">
+                <tbody className="divide-y divide-gray-100 dark:divide-slate-800 text-gray-805 dark:text-gray-205">
                   {usersList.map(u => (
                     <tr key={u._id}>
                       <td className="py-3.5 font-bold text-gray-900 dark:text-white">{u.name}</td>
-                      <td className="py-3.5 text-gray-450">{u.email}</td>
+                      <td className="py-3.5 text-gray-400">{u.email}</td>
                       <td className="py-3.5">
                         <select
                           value={u.role}
                           onChange={(e) => handlePromoteUser(u._id, e.target.value)}
-                          className="p-1 rounded bg-transparent border border-gray-250 dark:border-slate-800 font-bold uppercase text-[10px] text-gray-700 dark:text-gray-300"
+                          className="p-1 rounded bg-transparent border border-gray-200 dark:border-slate-800 font-bold uppercase text-[10px] text-gray-700 dark:text-gray-300"
                         >
                           <option value="user">User</option>
                           <option value="admin">Admin</option>

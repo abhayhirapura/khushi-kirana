@@ -221,7 +221,10 @@ export const getAvailableOrders = async (req, res) => {
     // Orders that are Placed or Processing and have NO delivery partner assigned yet
     const orders = await Order.find({
       status: { $in: ['Placed', 'Processing', 'Shipped'] },
-      deliveryPartner: { $exists: false }
+      $or: [
+        { deliveryPartner: { $exists: false } },
+        { deliveryPartner: null }
+      ]
     }).populate('user', 'name').sort({ createdAt: -1 });
 
     res.json(orders);

@@ -419,7 +419,7 @@ const Checkout = () => {
   if (successOrder) {
     return (
       <div className="max-w-xl mx-auto px-4 py-16 text-center">
-        <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-8 shadow-xl">
+        <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-8 shadow-xl">
           <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/30 flex items-center justify-center mx-auto mb-6 text-emerald-600 dark:text-emerald-400">
             <ShieldCheck className="w-10 h-10" />
           </div>
@@ -428,20 +428,20 @@ const Checkout = () => {
             Thank you for shopping at Khusi Kirana, your order is placed successfully.
           </p>
 
-          <div className="my-6 p-4 rounded-2xl bg-gray-50 dark:bg-slate-950/50 text-left space-y-2 border border-gray-100 dark:border-slate-850">
-            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-305">
+          <div className="my-6 p-4 rounded-2xl bg-gray-50 dark:bg-slate-950/50 text-left space-y-2 border border-gray-100 dark:border-slate-800">
+            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-300">
               <span>Order Tracking ID:</span>
               <span className="text-primary-500 font-bold uppercase">{successOrder.trackingId}</span>
             </div>
-            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-305">
+            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-300">
               <span>Payment Mode:</span>
               <span>{successOrder.paymentMethod}</span>
             </div>
-            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-305">
+            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-300">
               <span>Delivery Status:</span>
               <span className="text-amber-500 font-bold">{successOrder.status}</span>
             </div>
-            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-305">
+            <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-300">
               <span>Estimated Delivery:</span>
               <span className="text-primary-500 font-bold">
                 {new Date(successOrder.estimatedDelivery).toLocaleDateString()} at{' '}
@@ -459,7 +459,7 @@ const Checkout = () => {
             </button>
             <button
               onClick={() => navigate('/')}
-              className="flex-1 py-3 border border-gray-250 dark:border-slate-800 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-900 cursor-pointer text-sm transition"
+              className="flex-1 py-3 border border-gray-200 dark:border-slate-800 text-gray-700 dark:text-gray-300 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-900 cursor-pointer text-sm transition"
             >
               Back to Catalog
             </button>
@@ -482,11 +482,11 @@ const Checkout = () => {
       {/* Mock Payment Overlay Modal */}
       {showMockPaymentOverlay && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-850 p-8 rounded-3xl max-w-md w-full text-center shadow-2xl mx-4">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-8 rounded-3xl max-w-md w-full text-center shadow-2xl mx-4">
             <CreditCard className="w-16 h-16 text-primary-500 mx-auto mb-4 animate-pulse" />
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">Razorpay Sandbox Emulator</h3>
             <p className="text-sm text-gray-400 dark:text-gray-500 mt-2 leading-relaxed">
-              No live Razorpay keys are loaded. We have emulated a secure payment order of <span className="font-extrabold text-gray-905 dark:text-white">₹{total}</span>.
+              No live Razorpay keys are loaded. We have emulated a secure payment order of <span className="font-extrabold text-gray-900 dark:text-white">₹{total}</span>.
             </p>
             <div className="flex gap-4 mt-6">
               <button
@@ -500,7 +500,7 @@ const Checkout = () => {
                   setShowMockPaymentOverlay(false);
                   setLoading(false);
                 }}
-                className="flex-1 py-3 border border-gray-250 dark:border-slate-800 text-gray-500 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-900 cursor-pointer"
+                className="flex-1 py-3 border border-gray-200 dark:border-slate-800 text-gray-500 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-slate-900 cursor-pointer"
               >
                 Cancel
               </button>
@@ -512,7 +512,7 @@ const Checkout = () => {
       <h1 className="text-3xl font-black text-gray-900 dark:text-white mb-8">Checkout Checkout</h1>
 
       {errorMessage && (
-        <div className="p-4 mb-6 rounded-2xl bg-red-50 dark:bg-red-955/20 border border-red-200 dark:border-red-800 text-red-655 dark:text-red-400 text-sm">
+        <div className="p-4 mb-6 rounded-2xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-sm">
           ⚠️ {errorMessage}
         </div>
       )}
@@ -523,7 +523,7 @@ const Checkout = () => {
         <div className="lg:col-span-2 space-y-6">
           
           {/* Address select */}
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 p-6 rounded-3xl shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 rounded-3xl shadow-sm">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-extrabold text-gray-900 dark:text-white flex items-center">
                 <MapPin className="w-5 h-5 mr-2 text-primary-500" /> Delivery Address
@@ -566,7 +566,7 @@ const Checkout = () => {
                           <p className="text-xs text-gray-500 mt-1">{addr.city}, {addr.state} - {addr.zipCode}</p>
                         </div>
                         {selectedAddressId === addr._id && (
-                          <div className="mt-3.5 pt-2.5 border-t border-gray-100 dark:border-slate-850 flex items-center justify-between text-[11px] text-gray-400">
+                          <div className="mt-3.5 pt-2.5 border-t border-gray-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-gray-400">
                             <span className="flex items-center">
                               <Compass className="w-3.5 h-3.5 mr-1 text-primary-500" />
                               Distance: {deliveryInfo.distance} km
@@ -580,7 +580,7 @@ const Checkout = () => {
                 ) : (
                   <div className="text-center py-8 border-2 border-dashed border-gray-200 dark:border-slate-800 rounded-3xl">
                     <MapPin className="w-10 h-10 text-gray-300 mx-auto mb-2" />
-                    <p className="text-sm text-gray-450 font-semibold">No saved addresses found.</p>
+                    <p className="text-sm text-gray-400 font-semibold">No saved addresses found.</p>
                     <button
                       onClick={() => setShowAddressForm(true)}
                       className="mt-3 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold text-xs cursor-pointer shadow transition"
@@ -594,7 +594,7 @@ const Checkout = () => {
 
             {/* Address Autocomplete & GPS Detection Form */}
             {showAddressForm && (
-              <div className="mt-4 border-t border-gray-100 dark:border-slate-850 pt-4 space-y-4">
+              <div className="mt-4 border-t border-gray-100 dark:border-slate-800 pt-4 space-y-4">
                 
                 {/* Autocomplete Landmarks selection */}
                 <div className="space-y-2">
@@ -668,7 +668,7 @@ const Checkout = () => {
                         value={newStreet}
                         onChange={(e) => setNewStreet(e.target.value)}
                         placeholder="House No, Apartment Name, Street Area"
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                       />
                     </div>
                     
@@ -680,7 +680,7 @@ const Checkout = () => {
                         value={newCity}
                         onChange={(e) => setNewCity(e.target.value)}
                         placeholder="Jaipur"
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                       />
                     </div>
                     
@@ -692,7 +692,7 @@ const Checkout = () => {
                         value={newState}
                         onChange={(e) => setNewState(e.target.value)}
                         placeholder="Rajasthan"
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                       />
                     </div>
                     
@@ -705,7 +705,7 @@ const Checkout = () => {
                         onChange={(e) => handleZipCodeChange(e.target.value)}
                         placeholder="302021"
                         maxLength={6}
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white font-mono"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white font-mono"
                       />
                     </div>
 
@@ -721,7 +721,7 @@ const Checkout = () => {
                             className={`flex-1 py-2 text-xs font-bold rounded-xl border transition ${
                               newLabel === lbl
                                 ? 'bg-primary-500 border-primary-500 text-white'
-                                : 'border-gray-250 dark:border-slate-800 hover:border-gray-300 dark:hover:border-slate-700 text-gray-600 dark:text-gray-300'
+                                : 'border-gray-200 dark:border-slate-800 hover:border-gray-300 dark:hover:border-slate-700 text-gray-600 dark:text-gray-300'
                             }`}
                           >
                             {lbl === 'Home' ? '🏠 Home' : lbl === 'Work' ? '💼 Work' : '📍 Other'}
@@ -756,7 +756,7 @@ const Checkout = () => {
                     <button
                       type="button"
                       onClick={() => setShowAddressForm(false)}
-                      className="px-4.5 py-2.5 border border-gray-250 dark:border-slate-800 text-gray-500 rounded-xl text-xs font-bold transition cursor-pointer"
+                      className="px-4.5 py-2.5 border border-gray-200 dark:border-slate-800 text-gray-500 rounded-xl text-xs font-bold transition cursor-pointer"
                     >
                       Cancel
                     </button>
@@ -773,7 +773,7 @@ const Checkout = () => {
           </div>
 
           {/* Delivery SLOT booking system */}
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 p-6 rounded-3xl shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 rounded-3xl shadow-sm">
             <h3 className="text-lg font-extrabold text-gray-900 dark:text-white mb-4 flex items-center">
               <Clock className="w-5 h-5 mr-2 text-primary-500" /> Delivery Slot Scheduler
             </h3>
@@ -792,7 +792,7 @@ const Checkout = () => {
                   <h4 className="font-extrabold text-sm text-gray-900 dark:text-white flex items-center">
                     🚀 Standard Fast Delivery
                   </h4>
-                  <p className="text-xs text-gray-450 mt-1.5 leading-relaxed">
+                  <p className="text-xs text-gray-400 mt-1.5 leading-relaxed">
                     Fresh produce packed and delivered to your doorstep in under <span className="font-extrabold text-gray-800 dark:text-white">3 Hours</span>. Same-day service.
                   </p>
                 </div>
@@ -814,7 +814,7 @@ const Checkout = () => {
                   <h4 className="font-extrabold text-sm text-gray-900 dark:text-white flex items-center">
                     📅 Scheduled Delivery
                   </h4>
-                  <p className="text-xs text-gray-450 mt-1.5 leading-relaxed">
+                  <p className="text-xs text-gray-400 mt-1.5 leading-relaxed">
                     Book a convenient day and time slot to receive your groceries perfectly at your ease.
                   </p>
                 </div>
@@ -832,7 +832,7 @@ const Checkout = () => {
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-6 pt-6 border-t border-gray-100 dark:border-slate-850 space-y-4 overflow-hidden"
+                  className="mt-6 pt-6 border-t border-gray-100 dark:border-slate-800 space-y-4 overflow-hidden"
                 >
                   
                   {/* Select Day */}
@@ -851,7 +851,7 @@ const Checkout = () => {
                           className={`flex-1 py-2 text-xs font-bold rounded-xl border transition ${
                             selectedDate === d.key
                               ? 'bg-primary-500 border-primary-500 text-white shadow-sm'
-                              : 'border-gray-250 dark:border-slate-800 hover:border-gray-300 text-gray-600 dark:text-gray-300 bg-gray-50/30 dark:bg-slate-900/30'
+                              : 'border-gray-200 dark:border-slate-800 hover:border-gray-300 text-gray-600 dark:text-gray-300 bg-gray-50/30 dark:bg-slate-900/30'
                           }`}
                         >
                           {d.label}
@@ -877,7 +877,7 @@ const Checkout = () => {
                           className={`py-2 px-3 text-xs font-semibold rounded-xl border transition text-left flex items-center justify-between ${
                             selectedSlot === slot
                               ? 'bg-primary-50 border-primary-500 text-primary-600 dark:bg-primary-950/20 dark:text-primary-400 font-bold'
-                              : 'border-gray-250 dark:border-slate-800 text-gray-500 hover:border-gray-350 dark:hover:border-slate-700'
+                              : 'border-gray-200 dark:border-slate-800 text-gray-500 hover:border-gray-300 dark:hover:border-slate-700'
                           }`}
                         >
                           <span>🕒 {slot}</span>
@@ -893,7 +893,7 @@ const Checkout = () => {
           </div>
 
           {/* Payment selector */}
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 p-6 rounded-3xl shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 rounded-3xl shadow-sm">
             <h3 className="text-lg font-extrabold text-gray-900 dark:text-white mb-4 flex items-center">
               <CreditCard className="w-5 h-5 mr-2 text-primary-500" /> Payment Method
             </h3>
@@ -953,8 +953,8 @@ const Checkout = () => {
 
         {/* Right column: Order Basket Review */}
         <div className="space-y-6">
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 p-6 rounded-3xl shadow-sm space-y-4">
-            <h3 className="font-extrabold text-gray-905 dark:text-white text-base">Order Review</h3>
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 rounded-3xl shadow-sm space-y-4">
+            <h3 className="font-extrabold text-gray-900 dark:text-white text-base">Order Review</h3>
             
             <div className="space-y-3.5 max-h-[220px] overflow-y-auto pr-1">
               {cartItems.map(item => {
@@ -963,13 +963,13 @@ const Checkout = () => {
                 return (
                   <div key={item.product._id} className="flex justify-between text-xs font-semibold gap-3">
                     <span className="text-gray-500 truncate">{item.product.name} <span className="font-black text-gray-800 dark:text-white">x {item.quantity}</span></span>
-                    <span className="text-gray-850 dark:text-gray-305 shrink-0">₹{Math.round(singlePrice * item.quantity)}</span>
+                    <span className="text-gray-850 dark:text-gray-300 shrink-0">₹{Math.round(singlePrice * item.quantity)}</span>
                   </div>
                 );
               })}
             </div>
 
-            <div className="border-t border-gray-100 dark:border-slate-850 pt-4 space-y-2 text-xs font-semibold">
+            <div className="border-t border-gray-100 dark:border-slate-800 pt-4 space-y-2 text-xs font-semibold">
               <div className="flex justify-between text-gray-500">
                 <span>Subtotal</span>
                 <span>₹{Math.round(subtotal)}</span>
@@ -1001,7 +1001,7 @@ const Checkout = () => {
               )}
             </div>
 
-            <div className="border-t border-gray-100 dark:border-slate-850 pt-3 flex justify-between items-baseline">
+            <div className="border-t border-gray-100 dark:border-slate-800 pt-3 flex justify-between items-baseline">
               <span className="text-sm font-bold text-gray-900 dark:text-white">Final Total</span>
               <span className="text-2xl font-black text-primary-500">₹{Math.round(total)}</span>
             </div>
@@ -1019,7 +1019,7 @@ const Checkout = () => {
               disabled={loading}
               className={`w-full py-3.5 mt-4 text-white font-bold rounded-xl flex items-center justify-center cursor-pointer shadow-md transition ${
                 loading
-                  ? 'bg-gray-450 dark:bg-slate-800 cursor-wait'
+                  ? 'bg-gray-400 dark:bg-slate-800 cursor-wait'
                   : 'bg-primary-600 hover:bg-primary-500 hover:shadow-lg'
               }`}
             >

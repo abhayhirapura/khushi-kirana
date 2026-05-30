@@ -1,8 +1,2 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# This file is kept for reference only.
+# The active netlify.toml is at the project root.

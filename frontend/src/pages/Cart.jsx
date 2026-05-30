@@ -60,11 +60,11 @@ const Cart = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-10 shadow-lg"
+          className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-10 shadow-lg"
         >
           <ShoppingBasket className="w-16 h-16 text-gray-300 dark:text-gray-700 mx-auto mb-4 animate-bounce" />
           <h3 className="text-xl font-bold text-gray-800 dark:text-white">Your Cart is Empty</h3>
-          <p className="text-sm text-gray-450 dark:text-gray-500 mt-1 max-w-xs mx-auto">
+          <p className="text-sm text-gray-400 dark:text-gray-500 mt-1 max-w-xs mx-auto">
             Looks like you haven't added anything to your cart basket yet. Let's find some delicious items!
           </p>
           <Link
@@ -119,17 +119,17 @@ const Cart = () => {
                 </div>
 
                 {/* Quantity adjustments */}
-                <div className="flex items-center border border-gray-250 dark:border-slate-800 rounded-lg overflow-hidden bg-gray-50 dark:bg-slate-900">
+                <div className="flex items-center border border-gray-200 dark:border-slate-800 rounded-lg overflow-hidden bg-gray-50 dark:bg-slate-900">
                   <button
                     onClick={() => updateCartItem(item.product._id, Math.max(1, item.quantity - 1))}
-                    className="px-2.5 py-1.5 text-gray-655 font-bold hover:bg-gray-200 dark:hover:bg-slate-800 transition"
+                    className="px-2.5 py-1.5 text-gray-600 font-bold hover:bg-gray-200 dark:hover:bg-slate-800 transition"
                   >
                     -
                   </button>
                   <span className="px-3 text-sm font-bold text-gray-900 dark:text-white">{item.quantity}</span>
                   <button
                     onClick={() => updateCartItem(item.product._id, Math.min(item.product.stock, item.quantity + 1))}
-                    className="px-2.5 py-1.5 text-gray-655 font-bold hover:bg-gray-200 dark:hover:bg-slate-800 transition"
+                    className="px-2.5 py-1.5 text-gray-600 font-bold hover:bg-gray-200 dark:hover:bg-slate-800 transition"
                   >
                     +
                   </button>
@@ -152,7 +152,7 @@ const Cart = () => {
         <div className="space-y-6">
           
           {/* Coupon Panel */}
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 p-5 rounded-2xl shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-5 rounded-2xl shadow-sm">
             <h3 className="text-sm font-extrabold text-gray-900 dark:text-white uppercase tracking-wider mb-3 flex items-center">
               <Tag className="w-4 h-4 mr-2 text-accent-500" /> Apply Coupon
             </h3>
@@ -162,7 +162,7 @@ const Cart = () => {
                 placeholder="Enter coupon code"
                 value={coupon}
                 onChange={(e) => setCoupon(e.target.value)}
-                className="flex-1 px-3 py-2 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary-500 text-sm"
+                className="flex-1 px-3 py-2 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary-500 text-sm"
               />
               <button
                 type="submit"
@@ -179,12 +179,12 @@ const Cart = () => {
           </div>
 
           {/* Pricing Panel */}
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 p-6 rounded-2xl shadow-sm space-y-4">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm space-y-4">
             <h3 className="font-extrabold text-gray-900 dark:text-white text-base">
               Order Summary
             </h3>
             
-            <div className="space-y-2 border-b border-gray-100 dark:border-slate-850 pb-4">
+            <div className="space-y-2 border-b border-gray-100 dark:border-slate-800 pb-4">
               <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400">
                 <span>Subtotal</span>
                 <span>₹{Math.round(subtotal)}</span>
@@ -221,7 +221,7 @@ const Cart = () => {
 
             <button
               onClick={handleCheckout}
-              className="w-full py-3 bg-primary-650 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 text-white font-bold rounded-xl shadow-md flex items-center justify-center transition group cursor-pointer"
+              className="w-full py-3 bg-primary-600 hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-500 text-white font-bold rounded-xl shadow-md flex items-center justify-center transition group cursor-pointer"
             >
               Proceed to Checkout <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>

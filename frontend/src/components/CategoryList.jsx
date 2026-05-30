@@ -39,8 +39,8 @@ const CategoryList = ({ selectedCategory, onSelectCategory }) => {
       <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="flex-shrink-0 flex flex-col items-center space-y-2">
-            <div className="w-16 h-16 rounded-full bg-gray-250 dark:bg-slate-800 animate-pulse"></div>
-            <div className="w-20 h-4 bg-gray-250 dark:bg-slate-800 rounded animate-pulse"></div>
+            <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-slate-800 animate-pulse"></div>
+            <div className="w-20 h-4 bg-gray-200 dark:bg-slate-800 rounded animate-pulse"></div>
           </div>
         ))}
       </div>
@@ -48,7 +48,7 @@ const CategoryList = ({ selectedCategory, onSelectCategory }) => {
   }
 
   return (
-    <div className="flex items-center space-x-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-slate-850">
+    <div className="flex items-center space-x-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-slate-800">
       {/* "All" button */}
       <button
         onClick={() => onSelectCategory('')}
@@ -57,11 +57,11 @@ const CategoryList = ({ selectedCategory, onSelectCategory }) => {
         <div className={`w-16 h-16 rounded-2xl flex items-center justify-center font-bold text-sm shadow-sm transition-all duration-300 border ${
           selectedCategory === ''
             ? 'bg-primary-500 border-primary-500 text-white scale-105'
-            : 'bg-white dark:bg-slate-900 border-gray-150 dark:border-slate-800 text-gray-700 dark:text-gray-305 hover:border-primary-400'
+            : 'bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-700 dark:text-gray-300 hover:border-primary-400'
         }`}>
           ✨ All
         </div>
-        <span className="text-xs font-semibold text-gray-655 dark:text-gray-305 group-hover:text-primary-550 transition-colors">
+        <span className="text-xs font-semibold text-gray-600 dark:text-gray-300 group-hover:text-primary-500 transition-colors">
           Show All
         </span>
       </button>
@@ -75,14 +75,14 @@ const CategoryList = ({ selectedCategory, onSelectCategory }) => {
           <div className={`w-16 h-16 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 border ${
             selectedCategory === cat.name
               ? 'border-primary-500 ring-2 ring-primary-500 scale-105'
-              : 'border-gray-150 dark:border-slate-800 hover:border-primary-400'
+              : 'border-gray-200 dark:border-slate-800 hover:border-primary-400'
           }`}>
             <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
           </div>
-          <span className={`text-xs font-semibold max-w-[85px] text-center line-clamp-1 group-hover:text-primary-550 transition-colors ${
+          <span className={`text-xs font-semibold max-w-[85px] text-center line-clamp-1 group-hover:text-primary-500 transition-colors ${
             selectedCategory === cat.name
               ? 'text-primary-600 dark:text-primary-400 font-bold'
-              : 'text-gray-655 dark:text-gray-305'
+              : 'text-gray-600 dark:text-gray-300'
           }`}>
             {cat.name}
           </span>

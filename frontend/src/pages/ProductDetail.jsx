@@ -47,14 +47,14 @@ const ProductDetail = () => {
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-12 animate-pulse space-y-8">
-        <div className="h-6 bg-gray-250 dark:bg-slate-800 rounded w-24"></div>
+        <div className="h-6 bg-gray-200 dark:bg-slate-800 rounded w-24"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="pt-[100%] bg-gray-250 dark:bg-slate-800 rounded-2xl"></div>
+          <div className="pt-[100%] bg-gray-200 dark:bg-slate-800 rounded-2xl"></div>
           <div className="space-y-6">
-            <div className="h-8 bg-gray-250 dark:bg-slate-800 rounded w-3/4"></div>
-            <div className="h-4 bg-gray-250 dark:bg-slate-800 rounded w-1/3"></div>
-            <div className="h-16 bg-gray-250 dark:bg-slate-800 rounded w-full"></div>
-            <div className="h-10 bg-gray-250 dark:bg-slate-800 rounded w-1/2"></div>
+            <div className="h-8 bg-gray-200 dark:bg-slate-800 rounded w-3/4"></div>
+            <div className="h-4 bg-gray-200 dark:bg-slate-800 rounded w-1/3"></div>
+            <div className="h-16 bg-gray-200 dark:bg-slate-800 rounded w-full"></div>
+            <div className="h-10 bg-gray-200 dark:bg-slate-800 rounded w-1/2"></div>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@ const ProductDetail = () => {
       <div className="max-w-7xl mx-auto px-4 py-16 text-center">
         <ShieldAlert className="w-16 h-16 text-red-500 mx-auto mb-4" />
         <h3 className="text-xl font-bold text-gray-800 dark:text-white">Product not found</h3>
-        <p className="text-gray-450 mt-1">The item you are looking for might have been removed or doesn't exist.</p>
+        <p className="text-gray-400 mt-1">The item you are looking for might have been removed or doesn't exist.</p>
         <Link to="/" className="inline-block mt-6 px-6 py-2.5 bg-primary-500 text-white font-bold rounded-xl">
           Back to Home
         </Link>
@@ -80,7 +80,7 @@ const ProductDetail = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       
       {/* Back navigation */}
-      <Link to="/" className="inline-flex items-center text-sm font-semibold text-gray-655 dark:text-gray-300 hover:text-primary-500 mb-8 transition-colors">
+      <Link to="/" className="inline-flex items-center text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary-500 mb-8 transition-colors">
         <ArrowLeft className="w-4 h-4 mr-2" /> Back to Catalog
       </Link>
 
@@ -138,8 +138,8 @@ const ProductDetail = () => {
             </div>
 
             {/* Description */}
-            <div className="mt-6 border-t border-b border-gray-100 dark:border-slate-850 py-6">
-              <h3 className="text-sm font-bold text-gray-800 dark:text-gray-250 uppercase tracking-wider mb-2">About Product</h3>
+            <div className="mt-6 border-t border-b border-gray-100 dark:border-slate-800 py-6">
+              <h3 className="text-sm font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wider mb-2">About Product</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                 {product.description}
               </p>
@@ -163,22 +163,22 @@ const ProductDetail = () => {
           </div>
 
           {/* Cart controls */}
-          <div className="mt-8 pt-6 border-t border-gray-100 dark:border-slate-850 space-y-4">
+          <div className="mt-8 pt-6 border-t border-gray-100 dark:border-slate-800 space-y-4">
             
             {product.stock > 0 && (
               <div className="flex items-center space-x-4">
                 <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Quantity:</span>
-                <div className="flex items-center border border-gray-300 dark:border-slate-850 rounded-xl bg-gray-50 dark:bg-slate-900 overflow-hidden">
+                <div className="flex items-center border border-gray-300 dark:border-slate-800 rounded-xl bg-gray-50 dark:bg-slate-900 overflow-hidden">
                   <button
                     onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                    className="px-3.5 py-2 text-gray-600 dark:text-gray-400 font-bold hover:bg-gray-250 dark:hover:bg-slate-800 transition"
+                    className="px-3.5 py-2 text-gray-600 dark:text-gray-400 font-bold hover:bg-gray-200 dark:hover:bg-slate-800 transition"
                   >
                     -
                   </button>
                   <span className="px-4 py-2 font-bold text-gray-900 dark:text-white">{quantity}</span>
                   <button
                     onClick={() => setQuantity(prev => Math.min(product.stock, prev + 1))}
-                    className="px-3.5 py-2 text-gray-600 dark:text-gray-400 font-bold hover:bg-gray-250 dark:hover:bg-slate-800 transition"
+                    className="px-3.5 py-2 text-gray-600 dark:text-gray-400 font-bold hover:bg-gray-200 dark:hover:bg-slate-800 transition"
                   >
                     +
                   </button>
@@ -204,7 +204,7 @@ const ProductDetail = () => {
                 className={`p-3 rounded-2xl border transition-all ${
                   isFav
                     ? 'border-red-500 bg-red-50 dark:bg-red-950/20 text-red-500'
-                    : 'border-gray-250 dark:border-slate-800 hover:bg-gray-50 dark:hover:bg-slate-900 text-gray-400'
+                    : 'border-gray-200 dark:border-slate-800 hover:bg-gray-50 dark:hover:bg-slate-900 text-gray-400'
                 }`}
               >
                 <Heart className={`w-6 h-6 ${isFav ? 'fill-current' : ''}`} />
@@ -214,7 +214,7 @@ const ProductDetail = () => {
           </div>
 
           {/* Delivery & Trust badges */}
-          <div className="mt-8 grid grid-cols-3 gap-4 border-t border-gray-100 dark:border-slate-850 pt-6">
+          <div className="mt-8 grid grid-cols-3 gap-4 border-t border-gray-100 dark:border-slate-800 pt-6">
             <div className="flex flex-col items-center text-center p-3 rounded-2xl bg-gray-50 dark:bg-slate-900/50">
               <Truck className="w-6 h-6 text-primary-500 mb-1" />
               <span className="text-[10px] font-bold text-gray-800 dark:text-gray-300">Under 3 Hours</span>

@@ -143,13 +143,13 @@ const Profile = () => {
         
         {/* Left column: Tabs control links */}
         <aside className="lg:col-span-1">
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-4.5 shadow-sm space-y-1">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-4.5 shadow-sm space-y-1">
             <button
               onClick={() => handleTabChange('profile')}
               className={`w-full flex items-center px-4 py-3 rounded-2xl text-sm font-semibold transition ${
                 activeTab === 'profile'
                   ? 'bg-primary-500 text-white shadow-sm'
-                  : 'text-gray-655 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-850'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800'
               }`}
             >
               <User className="w-5 h-5 mr-3 shrink-0" /> Settings
@@ -159,7 +159,7 @@ const Profile = () => {
               className={`w-full flex items-center px-4 py-3 rounded-2xl text-sm font-semibold transition ${
                 activeTab === 'addresses'
                   ? 'bg-primary-500 text-white shadow-sm'
-                  : 'text-gray-655 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-850'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800'
               }`}
             >
               <MapPin className="w-5 h-5 mr-3 shrink-0" /> Saved Addresses
@@ -169,7 +169,7 @@ const Profile = () => {
               className={`w-full flex items-center px-4 py-3 rounded-2xl text-sm font-semibold transition ${
                 activeTab === 'orders'
                   ? 'bg-primary-500 text-white shadow-sm'
-                  : 'text-gray-655 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-850'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800'
               }`}
             >
               <History className="w-5 h-5 mr-3 shrink-0" /> Order History
@@ -179,7 +179,7 @@ const Profile = () => {
               className={`w-full flex items-center px-4 py-3 rounded-2xl text-sm font-semibold transition ${
                 activeTab === 'wishlist'
                   ? 'bg-primary-500 text-white shadow-sm'
-                  : 'text-gray-655 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-850'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800'
               }`}
             >
               <Heart className="w-5 h-5 mr-3 shrink-0" /> Wishlist
@@ -192,11 +192,11 @@ const Profile = () => {
           
           {/* Settings Tab */}
           {activeTab === 'profile' && (
-            <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
               <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6">Profile Settings</h2>
               
               {profileMessage && <p className="p-3 mb-4 rounded-xl bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800 text-xs font-semibold">{profileMessage}</p>}
-              {profileError && <p className="p-3 mb-4 rounded-xl bg-red-50 dark:bg-red-950/20 text-red-655 dark:text-red-400 border border-red-200 dark:border-red-800 text-xs font-semibold">{profileError}</p>}
+              {profileError && <p className="p-3 mb-4 rounded-xl bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 text-xs font-semibold">{profileError}</p>}
 
               <form onSubmit={handleUpdateProfile} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -207,7 +207,7 @@ const Profile = () => {
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
@@ -217,7 +217,7 @@ const Profile = () => {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
@@ -227,7 +227,7 @@ const Profile = () => {
                       placeholder="Leave blank to keep same"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
@@ -237,7 +237,7 @@ const Profile = () => {
                       placeholder="Leave blank to keep same"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                      className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                     />
                   </div>
                 </div>
@@ -253,7 +253,7 @@ const Profile = () => {
 
           {/* Addresses Tab */}
           {activeTab === 'addresses' && (
-            <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-extrabold text-gray-900 dark:text-white">Saved Addresses</h2>
                 <button
@@ -265,7 +265,7 @@ const Profile = () => {
               </div>
 
               {showAddrForm && (
-                <form onSubmit={handleAddAddress} className="mb-6 p-5 rounded-2xl bg-gray-50 dark:bg-slate-950 border border-gray-150 dark:border-slate-850 space-y-4">
+                <form onSubmit={handleAddAddress} className="mb-6 p-5 rounded-2xl bg-gray-50 dark:bg-slate-950 border border-gray-200 dark:border-slate-800 space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="sm:col-span-2">
                       <label className="text-xs font-bold text-gray-400 uppercase">Street Address</label>
@@ -275,7 +275,7 @@ const Profile = () => {
                         value={street}
                         onChange={(e) => setStreet(e.target.value)}
                         placeholder="House/Plot/Street Name"
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                       />
                     </div>
                     <div>
@@ -286,7 +286,7 @@ const Profile = () => {
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         placeholder="Jaipur"
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                       />
                     </div>
                     <div>
@@ -297,7 +297,7 @@ const Profile = () => {
                         value={state}
                         onChange={(e) => setState(e.target.value)}
                         placeholder="Rajasthan"
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                       />
                     </div>
                     <div>
@@ -308,7 +308,7 @@ const Profile = () => {
                         value={zipCode}
                         onChange={(e) => setZipCode(e.target.value)}
                         placeholder="302021"
-                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-250 dark:border-slate-800 bg-transparent text-sm text-gray-905 dark:text-white"
+                        className="w-full mt-1 p-2.5 rounded-xl border border-gray-200 dark:border-slate-800 bg-transparent text-sm text-gray-900 dark:text-white"
                       />
                     </div>
                   </div>
@@ -316,7 +316,7 @@ const Profile = () => {
                     <button
                       type="button"
                       onClick={() => setShowAddrForm(false)}
-                      className="px-4 py-2 border border-gray-250 dark:border-slate-800 text-gray-500 rounded-xl text-xs font-semibold"
+                      className="px-4 py-2 border border-gray-200 dark:border-slate-800 text-gray-500 rounded-xl text-xs font-semibold"
                     >
                       Cancel
                     </button>
@@ -332,10 +332,10 @@ const Profile = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {addresses.map(addr => (
-                  <div key={addr._id} className="p-4 rounded-2xl border border-gray-150 dark:border-slate-850 bg-gray-50/50 dark:bg-slate-900/50 relative flex flex-col justify-between">
+                  <div key={addr._id} className="p-4 rounded-2xl border border-gray-200 dark:border-slate-800 bg-gray-50/50 dark:bg-slate-900/50 relative flex flex-col justify-between">
                     <div>
                       <h4 className="font-bold text-gray-900 dark:text-white text-sm">{addr.street}</h4>
-                      <p className="text-xs text-gray-450 mt-1">{addr.city}, {addr.state} - {addr.zipCode}</p>
+                      <p className="text-xs text-gray-400 mt-1">{addr.city}, {addr.state} - {addr.zipCode}</p>
                     </div>
                     <div className="mt-4 flex justify-between items-center">
                       {addr.isDefault ? (
@@ -345,7 +345,7 @@ const Profile = () => {
                       )}
                       <button
                         onClick={() => handleDeleteAddress(addr._id)}
-                        className="p-1.5 rounded bg-white dark:bg-slate-950 border border-gray-150 dark:border-slate-850 text-gray-400 hover:text-red-500 transition cursor-pointer"
+                        className="p-1.5 rounded bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 text-gray-400 hover:text-red-500 transition cursor-pointer"
                         title="Delete Address"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -359,7 +359,7 @@ const Profile = () => {
 
           {/* Order History Tab */}
           {activeTab === 'orders' && (
-            <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
               <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6">Order History</h2>
 
               {ordersLoading ? (
@@ -371,10 +371,10 @@ const Profile = () => {
               ) : orders.length > 0 ? (
                 <div className="space-y-6">
                   {orders.map(order => (
-                    <div key={order._id} className="border border-gray-150 dark:border-slate-800 rounded-2xl p-5 bg-gray-50/20 dark:bg-slate-900/10 space-y-4">
+                    <div key={order._id} className="border border-gray-200 dark:border-slate-800 rounded-2xl p-5 bg-gray-50/20 dark:bg-slate-900/10 space-y-4">
                       
                       {/* Order top bar */}
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 dark:border-slate-850 pb-4 text-xs font-semibold">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-100 dark:border-slate-800 pb-4 text-xs font-semibold">
                         <div>
                           <p className="text-gray-400">Order Placed Date</p>
                           <p className="text-gray-800 dark:text-gray-200 mt-0.5">{new Date(order.createdAt).toLocaleDateString()}</p>
@@ -405,14 +405,14 @@ const Profile = () => {
                       <div className="space-y-3.5">
                         {order.orderItems.map((item, i) => (
                           <div key={i} className="flex justify-between items-center text-xs gap-3">
-                            <span className="text-gray-655 truncate">{item.name} <span className="font-bold text-gray-850 dark:text-gray-305">x {item.quantity}</span></span>
+                            <span className="text-gray-600 truncate">{item.name} <span className="font-bold text-gray-850 dark:text-gray-300">x {item.quantity}</span></span>
                             <span className="text-gray-800 dark:text-gray-300">₹{Math.round(item.price * item.quantity)}</span>
                           </div>
                         ))}
                       </div>
 
                       {/* CTA link to tracking page */}
-                      <div className="flex justify-end items-center gap-3 pt-2 border-t border-gray-100 dark:border-slate-850">
+                      <div className="flex justify-end items-center gap-3 pt-2 border-t border-gray-100 dark:border-slate-800">
                         <button
                           disabled={reorderLoadingId === order._id}
                           onClick={() => handleReorder(order.orderItems, order._id)}
@@ -422,7 +422,7 @@ const Profile = () => {
                         </button>
                         <Link
                           to={`/orders/${order._id}/tracking`}
-                          className="px-4.5 py-2 text-xs font-bold bg-white dark:bg-slate-900 border border-gray-250 dark:border-slate-800 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-850 text-gray-700 dark:text-gray-350 transition"
+                          className="px-4.5 py-2 text-xs font-bold bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-700 dark:text-gray-300 transition"
                         >
                           Track Package
                         </Link>
@@ -443,13 +443,13 @@ const Profile = () => {
 
           {/* Wishlist Tab */}
           {activeTab === 'wishlist' && (
-            <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
+            <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
               <h2 className="text-xl font-extrabold text-gray-900 dark:text-white mb-6">Starred Wishlist</h2>
               
               {wishlist.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {wishlist.map(product => (
-                    <div key={product._id} className="p-3 border border-gray-150 dark:border-slate-800 rounded-2xl flex flex-col justify-between bg-gray-50/20 dark:bg-slate-950/20 relative">
+                    <div key={product._id} className="p-3 border border-gray-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between bg-gray-50/20 dark:bg-slate-950/20 relative">
                       <button
                         onClick={() => toggleWishlist(product)}
                         className="absolute top-2 right-2 p-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 text-red-500 transition shadow cursor-pointer"
@@ -477,7 +477,7 @@ const Profile = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-center py-10 text-gray-450 dark:text-gray-500 font-semibold text-sm">
+                <p className="text-center py-10 text-gray-400 dark:text-gray-500 font-semibold text-sm">
                   You haven't wishlisted any items yet.
                 </p>
               )}

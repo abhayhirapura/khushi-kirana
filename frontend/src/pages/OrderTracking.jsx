@@ -60,7 +60,7 @@ const OrderTracking = () => {
   if (error || !order || !trackingData) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-darkBg p-4">
-        <div className="max-w-md w-full bg-white dark:bg-darkCard p-8 rounded-3xl border border-gray-150 dark:border-darkBorder text-center shadow-lg">
+        <div className="max-w-md w-full bg-white dark:bg-darkCard p-8 rounded-3xl border border-gray-200 dark:border-darkBorder text-center shadow-lg">
           <div className="text-red-500 text-5xl mb-4 font-black">!</div>
           <h3 className="text-xl font-black text-gray-900 dark:text-white">Order Tracking Unavailable</h3>
           <p className="text-sm text-gray-550 dark:text-gray-405 mt-2">{error || 'Order could not be located.'}</p>
@@ -113,7 +113,7 @@ const OrderTracking = () => {
       <div className="space-y-6">
         
         {/* Live Status Header */}
-        <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 shadow-sm relative overflow-hidden">
+        <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 h-2 bg-gradient-to-r from-primary-500 to-accent-500 w-full"></div>
           
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
@@ -127,7 +127,7 @@ const OrderTracking = () => {
               </p>
             </div>
             
-            <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-2xl border border-gray-100 dark:border-slate-800 text-center shrink-0">
+            <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-gray-100 dark:border-slate-800 text-center shrink-0">
               <span className="text-[10px] text-gray-400 uppercase font-bold block">Tracking ID</span>
               <span className="text-base font-black text-gray-800 dark:text-gray-100 tracking-wider block uppercase">{order.trackingId}</span>
             </div>
@@ -136,10 +136,10 @@ const OrderTracking = () => {
 
         {/* Timeline Tracking */}
         {order.status !== 'Cancelled' ? (
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm">
             <h3 className="text-base font-black text-gray-900 dark:text-white mb-6">Delivery Timeline</h3>
             
-            <div className="relative pl-6 sm:pl-8 border-l-2 border-gray-150 dark:border-slate-800 ml-3.5 space-y-8 pb-2">
+            <div className="relative pl-6 sm:pl-8 border-l-2 border-gray-200 dark:border-slate-800 ml-3.5 space-y-8 pb-2">
               {steps.map((step, idx) => {
                 const isCompleted = idx <= currentStepIndex;
                 const isCurrent = idx === currentStepIndex;
@@ -152,7 +152,7 @@ const OrderTracking = () => {
                     <div className={`absolute -left-[39px] sm:-left-[47px] top-0 w-8 h-8 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${
                       isCompleted 
                         ? 'bg-primary-500 border-primary-500 text-white shadow-sm shadow-primary-500/20 scale-110'
-                        : 'bg-white dark:bg-slate-900 border-gray-250 dark:border-slate-800 text-gray-400'
+                        : 'bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-800 text-gray-400'
                     }`}>
                       {isCompleted ? (
                         <CheckCircle className="w-5 h-5" />
@@ -168,7 +168,7 @@ const OrderTracking = () => {
                             ? 'text-primary-500 dark:text-primary-400 font-extrabold text-base' 
                             : isCompleted 
                             ? 'text-gray-900 dark:text-white' 
-                            : 'text-gray-450 dark:text-gray-500'
+                            : 'text-gray-400 dark:text-gray-500'
                         }`}>
                           {step.label}
                         </h4>
@@ -191,14 +191,14 @@ const OrderTracking = () => {
           </div>
         ) : (
           <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-3xl p-6 text-center">
-            <h3 className="text-lg font-bold text-red-655 dark:text-red-400">This order was cancelled</h3>
+            <h3 className="text-lg font-bold text-red-600 dark:text-red-400">This order was cancelled</h3>
             <p className="text-xs text-red-500 dark:text-red-450 mt-1">If money was deducted, it will be refunded back to your source account within 3-5 business days.</p>
           </div>
         )}
 
         {/* Assigned Rider Info */}
         {order.deliveryPartner && order.status !== 'Delivered' && order.status !== 'Cancelled' && (
-          <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-5 shadow-sm flex items-center justify-between gap-4">
+          <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-5 shadow-sm flex items-center justify-between gap-4">
             <div className="flex items-center space-x-3.5">
               <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-primary-450 to-primary-600 flex items-center justify-center text-white">
                 <User className="w-6 h-6" />
@@ -206,7 +206,7 @@ const OrderTracking = () => {
               <div>
                 <span className="text-[9px] uppercase font-bold text-gray-400 block tracking-wider">Delivery Executive Assigned</span>
                 <h4 className="font-extrabold text-gray-900 dark:text-white text-sm">Rider Exec</h4>
-                <p className="text-xs text-gray-450 mt-0.5">Assigned to complete your delivery safely.</p>
+                <p className="text-xs text-gray-400 mt-0.5">Assigned to complete your delivery safely.</p>
               </div>
             </div>
             <a href="tel:+919876543210" className="p-3 bg-primary-50 dark:bg-primary-950/20 hover:bg-primary-100 text-primary-500 rounded-full transition">
@@ -216,8 +216,8 @@ const OrderTracking = () => {
         )}
 
         {/* Delivery Details Summary Card */}
-        <div className="bg-white dark:bg-slate-900 border border-gray-150 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-5">
-          <h3 className="text-base font-black text-gray-900 dark:text-white pb-3 border-b border-gray-100 dark:border-slate-850">
+        <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm space-y-5">
+          <h3 className="text-base font-black text-gray-900 dark:text-white pb-3 border-b border-gray-100 dark:border-slate-800">
             Delivery Information
           </h3>
 
@@ -231,7 +231,7 @@ const OrderTracking = () => {
               <p className="text-sm font-bold text-gray-900 dark:text-white">
                 {order.shippingAddress.street}
               </p>
-              <p className="text-xs text-gray-450">
+              <p className="text-xs text-gray-400">
                 {order.shippingAddress.city}, {order.shippingAddress.state} - {order.shippingAddress.zipCode}
               </p>
             </div>
@@ -244,13 +244,13 @@ const OrderTracking = () => {
               <p className="text-sm font-bold text-gray-900 dark:text-white">
                 ₹{Math.round(order.pricing.totalPrice)}
               </p>
-              <p className="text-xs text-gray-450 flex items-center">
+              <p className="text-xs text-gray-400 flex items-center">
                 Method: <span className="font-semibold text-gray-700 dark:text-gray-300 ml-1">{order.paymentMethod}</span>
               </p>
               <span className={`inline-block text-[9px] font-black px-2 py-0.5 rounded-md ${
                 order.isPaid
                   ? 'bg-green-50 text-green-600 dark:bg-green-950/20 dark:text-green-400'
-                  : 'bg-red-50 text-red-655 dark:bg-red-950/20 dark:text-red-400'
+                  : 'bg-red-50 text-red-600 dark:bg-red-950/20 dark:text-red-400'
               }`}>
                 {order.isPaid ? 'PAID SUCCESSFULLY' : 'PAYMENT PENDING / CASH ON DELIVERY'}
               </span>
@@ -259,11 +259,11 @@ const OrderTracking = () => {
           </div>
 
           {/* Items checklist */}
-          <div className="pt-4 border-t border-gray-100 dark:border-slate-850">
+          <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
             <h4 className="text-xs font-bold text-gray-400 uppercase mb-3">Items Packed</h4>
             <div className="space-y-2.5">
               {order.orderItems.map((item, i) => (
-                <div key={i} className="flex justify-between items-center text-xs text-gray-750 dark:text-gray-305">
+                <div key={i} className="flex justify-between items-center text-xs text-gray-750 dark:text-gray-300">
                   <span className="truncate">{item.name} <span className="font-bold text-gray-900 dark:text-white">x {item.quantity}</span></span>
                   <span className="font-semibold text-gray-900 dark:text-white">₹{Math.round(item.price * item.quantity)}</span>
                 </div>
